@@ -1,0 +1,63 @@
+html{
+  height: auto;
+}
+
+html, body,#root, #root > section{
+  min-height: 100%;
+}
+
+
+
+
+@bg-color-light : #F0F2F5;
+@text-color-light : #6A7687;
+@text-color-select : #50A4F8;
+
+
+@bg-color-dark : black;
+@text-color-dark : white;
+
+
+@import '../../../node_modules/antd/dist/antd.less';
+@import '../../component-library/header-my/header-my.less';
+
+
+.ant-layout, .ant-layout-footer{
+  background: #f0f2f500;
+}
+.layout-light, .footer-light{
+  background: @bg-color-light;
+}
+
+.layout-dark, .footer-dark{
+  background:@bg-color-dark;
+}
+
+
+@media screen and (max-width:768px){
+  .ant-layout-header{
+    padding:0 10px;
+  }
+}
+
+
+// 走马灯
+.slick-dots {
+  top: 30%;
+  right: 0%;
+  max-width: 3%;
+}
+
+
+
+//antd 的分页样式修改
+.ant-pagination-item{
+  background-color: #fff0;
+  height: 40px;
+  border: 0;
+}
+
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+  background-color: #fff0;
+  border: 0;
+}

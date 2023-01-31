@@ -1,0 +1,155 @@
+
+
+.dots{
+  right: 4.2857rem;
+  position: fixed;
+  top: 38%;
+  opacity: 1;
+  color: rgb(0, 0, 0);
+  z-index: 100;
+  width: 2.1428rem;
+  margin-top: 0!important;
+}
+
+.dots ul {
+  margin: 0;
+  padding: 0;
+}
+
+.dots li{
+  margin: 1.928rem  auto;
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: relative;
+}
+
+.dots li a{
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffeb00;
+  -webkit-transition: color .3s ease-out;
+  -o-transition: color .3s ease-out;
+  transition: color .3s ease-out;
+  background-color: transparent;
+}
+
+
+.dots span {
+  background: #fff;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  width: 9px;
+  height: 9px;
+  border: 0;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+
+.dots li .active span {
+  transform: scale(1.5);
+  background: #ffeb00;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  width: 9px;
+  height: 9px;
+  border: 0;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+
+
+
+
+.pagepiling {
+  overflow: hidden;
+  touch-action: none;
+}
+.pp-easing {
+  -webkit-transition: all 1000ms cubic-bezier(.55,.085,0,.99);
+  -moz-transition: all 1000ms cubic-bezier(.55,.085,0,.99);
+  -o-transition: all 1000ms cubic-bezier(.55,.085,0,.99);
+  transition: all 1000ms cubic-bezier(.55,.085,0,.99);
+  -webkit-transition-timing-function: cubic-bezier(.55,.085,0,.99);
+  -moz-transition-timing-function: cubic-bezier(.55,.085,0,.99);
+  -o-transition-timing-function: cubic-bezier(.55,.085,0,.99);
+  transition-timing-function: cubic-bezier(.55,.085,0,.99);
+}
+
+
+.pagepiling .pp-scrollable {
+  padding: 0;
+  overflow-x: hidden;
+
+  overflow-y: auto;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+
+.cv-title{
+  padding: 51px 0 0 0;
+  margin-top: 65px;
+  position: relative;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: Roboto, serif;
+}
+.cv-title:before {
+  content: '';
+  position: absolute;
+  top: 85px;
+  left: 48%;
+  width: 53px;
+  height: 3px;
+  background: #ff0000;
+}
+
+
+
+//第一页简历颜色
+.pagepiling .section0{
+  background: #606771;
+}
+
+//第二页简历颜色
+.pagepiling .section1{
+  background: #1d2023;
+}
+
+
+//第三页简历颜色
+.pagepiling .section2{
+  background: #606771;
+}
+
+//第四页简历颜色
+.pagepiling .section3{
+  background: #1d2023;
+}
+
+
+
+
+@media screen and (max-width:768px) {
+  .dots{
+    right: 0.2857rem;
+  }
+
+}
