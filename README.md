@@ -49,3 +49,18 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## 修改进度
 - 今天适配了一下手机版的首页，其他的慢慢来吧。之后做个加载动画吧，先不优化加载性能了。
 - 
+
+
+# 启动项目
+
+install taobao image:
+
+```
+npm install -g cnpm --registry=http://registry.npmmirror.com
+```
+
+install craco
+
+```
+cnpm install @craco/craco
+```
