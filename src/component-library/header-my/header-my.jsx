@@ -1,6 +1,8 @@
-import React, {Component, useState} from "react";
+import React, {useState} from "react";
 import {Col, Menu, Row, Switch} from "antd";
 import { useNavigate } from "react-router-dom";
+
+import "./header-my.css"
 
 import logoDark from "./logo-dark.svg"
 import logoLight from "./logo-light.svg"
@@ -32,19 +34,12 @@ const navList = [
 
 function NavTop(prop) {
 
-    let navigate = useNavigate();
-
-    const handleClick = e => {
-        prop.setPath(e.key)
-        navigate(e.key)
-    }
-
     return (
         <Col xs={24} span={20}>
-            <Menu theme={prop.theme} selectedKeys={[prop.path]} onClick={handleClick} mode="horizontal" style={{backgroundColor:"rgb(240 242 245 / 0%)"}}>
+            <Menu theme={prop.theme} mode="horizontal">
                 {
                     navList.map((nav, index) => (
-                        <Menu.Item key={nav.path} selected={true}>
+                        <Menu.Item key={nav.path} selected={true} className="nav-title-my">
                             {nav.text}
                         </Menu.Item>
                     ))
@@ -67,33 +62,19 @@ const SwitchTheme = (prop) => {
 
 
 export default function HeaderMy(props) {
-    let navigate = useNavigate();
 
-    const [path, setPath] = useState("/index");
     const {theme, setTheme} = props
-
-
-    const handleClickLogo = () => {
-        setPath("/blog")
-        navigate("/blog")
-    }
-
 
     return (
         <div className={"myHeader"}>
             <Row gutter={[24, 16]}>
                 <Col xs={0} md={{span:3}}>
-                    <a onClick={handleClickLogo}>
-                    {theme === "dark"?(
-                        <img src={logoDark} alt={"logo"}/>
-                    ):(
-                        <img src={logoLight} alt={"logo"}/>
-                    )}
-                    </a>
+                    <img src={logoLight} alt={"logo"}/>
                 </Col>
 
                 <Col md={{span:20}} xs={{span:20}}>
-                    <NavTop theme={theme} path={path} setPath={setPath}/>
+                    {/* <NavTop theme={theme} path={path} setPath={setPath}/> */}
+                    <NavTop theme={theme}/>
                 </Col>
 
                 <Col md={{span:1}} xs={{span:3}}>

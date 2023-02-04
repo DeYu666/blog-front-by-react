@@ -1,7 +1,7 @@
 import {Component} from "react";
 import {notification, Progress} from "antd";
 
-import "./content-skill.less"
+import "./content-skill.css"
 
 export default class ContentSkill extends Component {
 
@@ -37,10 +37,10 @@ export default class ContentSkill extends Component {
     }
 
     render() {
-        const {skillArr} = this.props
-        console.log(this.props)
+        // const {skillArr} = this.props
+        const {skillArr} = this.state
         return(
-            <div className={"skill-content-dark skill-content"}>
+            <div className={"skill-content skill-content"}>
                 {skillArr.map((skill, index)=>(
                     <div className={"skill-data"} key={index}>
                         <div onClick={this.showSkillContent.bind(this,skill.skill_intro)} style={{cursor: "default"}}>{skill.skill_name}   </div>

@@ -1,50 +1,63 @@
-import React, {useState} from "react";
-import Switch from "./switch";
+import React, {useState,useEffect,useRef} from "react";
+import Slider from "react-slick";
 
-import "./cv.less"
+import "./cv.css"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 import CvFirst from "../cv-number/cv-first/cv-first";
 import CvSecond from "../cv-number/cv-second/cv-second";
 import CvThird from "../cv-number/cv-third/cv-third";
 import CvFourth from "../cv-number/cv-fourth/cv-fourth";
 
 
+var sliderSettings = {
+    vertical: true,
+    infinite: false,
+    verticalSwiping: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+
+    // hide the arrow of slider
+    nextArrow: <HideArrow />,  
+    prevArrow: <HideArrow />
+};
+
+// handle slider arrow
+function HideArrow() {
+    return ( <div style={{display: "none"}} /> );
+}
+
+
+
+
+
+
+
 function Cv(prop) {
 
-    const {theme} = prop
-    const pages = [<CvFirst theme={theme}/>, <CvSecond/>, <CvThird/>, <CvFourth/>]
-    const [active, setActive] = useState(0)
-
-    const getPage = (index, newTheme) => {
-        if (index === 0) {
-            return <CvFirst theme={newTheme}/>
-        }
-        if (index === 1) {
-            return <CvSecond theme={newTheme}/>
-        }
-        if (index === 2) {
-            return <CvThird theme={newTheme}/>
-        }
-        if (index === 3) {
-            return <CvFourth theme={newTheme}/>
-        }
-    }
-
+ 
+    const pages = [<CvFirst/>, <CvSecond/>, <CvThird/>, <CvFourth/>]
 
     return (
-        <>
-            <Switch pages={pages} active={active} setActive={(index) => (setActive(index))}/>
 
-            <div className={"pagepiling"}>
+        <div >
+
+            <Slider {...sliderSettings}>
+
                 {pages.map((page, index) => (
-                    <div className={"pp-scrollable pp-easing section" + index} style={active > index ? {
-                        transform: "translate3d(0px, -100%, 0px)",
-                        zIndex: pages.length - index
-                    } : {transform: "translate3d(0px, 0px, 0px)", zIndex: pages.length - index}}>
-                        {getPage(index, theme)}
+
+                    <div>
+                        <div style={{height:"100vh", width:"100%"}}>
+                            {page}
+                        </div>
+                        
                     </div>
                 ))}
-            </div>
-        </>
+
+            </Slider>
+        </div>
     )
 }
 

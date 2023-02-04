@@ -1,0 +1,25 @@
+.cv-fourth{
+  height: 100%;
+  background-color: gray;
+  overflow: hidden
+}
+.project-card{
+  padding: 62px 191px 40px 136px;
+}
+
+
+@media screen and (max-width:768px) {
+  .project-card{
+    padding: 20px 60px 20px 60px;
+  }
+  .project-card > div > div > div {
+    width: 100%;
+  }
+}
+
+
+
+/* global css */
+.cv-fourth{
+  background-color: var(--color_bg_2);
+}

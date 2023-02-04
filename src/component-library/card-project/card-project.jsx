@@ -1,11 +1,11 @@
-import {Component, useState} from "react";
+import { useState} from "react";
 import moment from "moment";
-import "./card-project.less"
+import "./card-project.css"
 import {useNavigate} from "react-router-dom";
 
 
 export default function CardProject(prop) {
-    let navigate = useNavigate();
+    // let navigate = useNavigate();
 
     const examplePost = {
         project_img_src: "",
@@ -14,12 +14,13 @@ export default function CardProject(prop) {
         abstract: "这里写简介，描述项目的大致内容",
     }
 
-    const [post, setPost] = useState(prop.post)
+    // const [post, setPost] = useState(prop.post)
+    const [post, setPost] = useState(examplePost)
 
 
     const handleClickPost = id => {
-        console.log(id)
-        navigate("/projectDetail", {state:{id:id}});
+        // console.log(id)
+        // navigate("/projectDetail", {state:{id:id}});
         // this.props.getDetail(id)
         // this.props.history.push(`/detail/${id}`)
     }

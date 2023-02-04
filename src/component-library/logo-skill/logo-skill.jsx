@@ -1,5 +1,5 @@
 import {Component} from "react";
-import "./logo-skill.less"
+import "./logo-skill.css"
 
 export default class LogoSkill extends Component {
     render() {

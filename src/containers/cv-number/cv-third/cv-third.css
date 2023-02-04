@@ -1,0 +1,39 @@
+.cv-third{
+  height: 100%;
+  background-color: rgb(115 136 216);
+  overflow: hidden
+}
+
+ /* update slick dots style  */
+ .slick-dots li button:before{
+  content: "";
+ }
+
+
+
+.edu-content{
+  padding: 62px 191px 40px 136px;
+}
+
+
+
+@media screen and (max-width:768px) {
+  .edu-content{
+    padding: 10px 40px 10px 40px;
+  }
+}
+
+
+
+
+
+
+
+/* global css */
+.cv-third{
+  background-color: var(--color_bg_3);
+}
+
+.cv-title{
+  font-family: "XingShu";
+}

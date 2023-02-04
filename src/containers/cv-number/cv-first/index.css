@@ -1,0 +1,41 @@
+
+/* defalut css */
+.cv-frist{
+    height: 100%;
+    background-color: #f0f2f5
+}
+
+.introductionContainer{
+    position: absolute;
+    top: 35%;
+    left: 54%;
+}
+
+.introductionLogo{
+    float: left;
+}
+
+@media screen and (max-width:768px) {
+    .introductionContainerr{
+        position: unset;
+        text-align: -webkit-center;
+    }
+
+    .introductionLogo{
+        float: unset;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .introductionLogo > img {
+        width: 148px;
+    }
+}
+
+
+
+
+/* global css */
+.cv-frist{
+    background-color: var(--color_bg_3);
+}

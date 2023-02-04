@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./introduction-cv.less"
+import "./introduction-cv.css"
 
 
 export default function IntroductionCv(prop) {
@@ -14,17 +14,11 @@ export default function IntroductionCv(prop) {
             </div>
 
             <div className={"intrName"}>
-                {theme !== "dark" ? (
-                    <span style={{color: " #6A7687"}}>Asa`s</span>
-                ) : (
-                    <span style={{color: " #FFFFFF"}}>Asa`s</span>
-                )}
-
-
+                <span style={{color: " #6A7687"}}>Asa`s</span>
                 <span style={{color: " #B92448"}}>Blog</span>
             </div>
 
-            <div className={theme !== "dark" ? "intrContent intrContent-light" : "intrContent intrContent-dark"}>
+            <div className={"intrContent"}>
                 后台开发程序员
             </div>
         </div>
