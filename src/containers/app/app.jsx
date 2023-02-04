@@ -5,13 +5,15 @@ import "./app.css"
 import HeaderMy from "../../component-library/header-my/header-my";
 import Cv from "../cv/cv";
 
-// import Blog from "../blog/blog";
-// import PostDetail from "../post-detail/post-detail";
-// import Book from "../book/book";
-// import Diary from "../diary/diary";
+import Blog from "../blog/blog";
+import PostDetail from "../post-detail/post-detail";
+
+import Book from "../book/book";
+import BookDetail from "../book-detail/book-detail";
+
+import Diary from "../diary/diary";
 // import Project from "../project/project";
 // import {Route, Routes} from "react-router-dom";
-// import BookDetail from "../book-detail/book-detail";
 import FooterMy from "../../component-library/footer-my/footer";
 // import ProjectDetail from "../cv-number/project-detail/project-detail";
 
@@ -32,14 +34,19 @@ function App() {
 
 
                 <Content>
-                    <Cv />
+                    {/* <Cv /> */}
+                    {/* <Blog /> */}
+                    {/* <PostDetail /> */}、
+                    {/* <Book /> */}
+                    {/* <BookDetail /> */}
+                    <Diary />
                 </Content>
 
 
 
                 {/* The cv interface does not display footer */}
                 <Footer>
-                    {/* <FooterMy /> */}
+                    <FooterMy />
                 </Footer>
             </Layout>
         </>

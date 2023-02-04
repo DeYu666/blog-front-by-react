@@ -41,7 +41,8 @@
 
 
 .ant-layout .ant-layout-footer {
-  padding: 0;
+  padding: 40px 0 20px;
+  border-top: solid 1px rgb(147, 144, 144);
 }
 
 
