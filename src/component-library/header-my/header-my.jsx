@@ -20,10 +20,10 @@ const navList = [
         path: '/book',
         text: '书籍',
     },
-    {
-        path: '/project',
-        text: '项目',
-    },
+    // {
+    //     path: '/project',
+    //     text: '项目',
+    // },
     {
         path: '/diary',
         text: '日记',

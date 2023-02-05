@@ -29,7 +29,6 @@ const {Header, Footer, Content} = Layout;
 function App() {
     let location = useLocation()
 
-    console.log(location.pathname)
 
     return (
         <>

@@ -1,18 +1,18 @@
 import React, {useState} from "react";
 
 import "./top-blog.css"
-// import {getChickenSoup} from "../../api/blog";
+import {getChickenSoup} from "../../api/blog";
 
 export default function TopBlog(prop) {
     const [sentence, setSentence] = useState(prop.chickenSoup)
 
      const changeSoup = () =>{
-        // getChickenSoup().then(res=>{
-        //     console.log(res)
-        //     setSentence(res.data.sentence)
-        // }).catch(error=>{
-        //     console.log(error)
-        // })
+        getChickenSoup().then(res=>{
+            // console.log(res)
+            setSentence(res.data.sentence)
+        }).catch(error=>{
+            console.log(error)
+        })
     }
 
     return (

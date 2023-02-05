@@ -3,7 +3,7 @@ import CardBook from "../../../component-library/card-book/card-book";
 import PaginationMy from "../../../component-library/pagination-my/pagination-my";
 import React, {useEffect, useState} from "react";
 // import {getPostListByPage} from "../../../api/blog";
-// import {getBooksListByCateId} from "../../../api/book";
+import {getBooksListByCateId} from "../../../api/book";
 
 
 export default function ShowBookList(prop) {
@@ -21,13 +21,13 @@ export default function ShowBookList(prop) {
     }
 
     useEffect(()=>{
-        // getBooksListByCateId(cateId, pageNum).then(res=>{
-        //     console.log(res)
-        //     setBooks(res.data.booksContent)
-        //     setPageTotal(res.data.pagesNum)
-        // }).catch(error=>{
-        //     console.log(error)
-        // })
+        getBooksListByCateId(cateId, pageNum).then(res=>{
+            // console.log(res)
+            setBooks(res.data.booksContent)
+            setPageTotal(res.data.pagesNum)
+        }).catch(error=>{
+            console.log(error)
+        })
     }, [cateId, pageNum])
 
     return (

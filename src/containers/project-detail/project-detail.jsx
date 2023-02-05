@@ -2,14 +2,14 @@ import React, {useEffect, useState} from "react";
 import {Affix, Col, Row} from "antd";
 import {RightOutlined, LeftOutlined} from "@ant-design/icons";
 
-import {useLocation} from "react-router-dom";
+import {useParams } from "react-router-dom";
 import "./project-detail.css";
 
 
 import TopPostDetail from "../../component-library/top-post-detail/top-post-detail";
 import ContentPostDetail from "../../component-library/content-post-detail/content-post-detail";
 import PostDetailSide from "../post-detail-side/post-detail-side";
-// import {getCvProjectById} from "../../../api/cv";
+import {getCvProjectById} from "../../api/cv";
 
 
 export default function ProjectDetail() {
@@ -18,36 +18,43 @@ export default function ProjectDetail() {
     const [post, setPost] = useState(examplePost);
     const [toc, setToc] = useState([]);
 
-    let location = useLocation()
+    let param = useParams ()
 
     const readData = () => {
-        console.log(location)
-        let projectId;
-        if(location.state === null){
-            projectId = -1
-        }else{
-            projectId = location.state.id
-        }
-        console.log(projectId)
-        // getCvProjectById(projectId).then(res=>{
-        //     console.log(res)
-        //     setPost(res.data)
 
-        //     let toc = res.data.project_content.match(/#(.*)/g)
-        //     console.log(toc);
+        let projectId = param.projectId
 
-        //     let tempToc = []
+       
+        getCvProjectById(projectId).then(res=>{
+            console.log(res)
+            
+            let data;
 
-        //     for (let i =0; i< toc.length; i++) {
-        //         tempToc.push({name:toc[i]})
-        //     }
-        //     console.log(tempToc);
+            if (res.data == null) {
+                data = examplePost
+            } else {
+                data = res.data
+            }
 
-        //     setToc(tempToc)
+            setPost(data)
+            
 
-        // }).catch(error=>{
-        //     console.log(error)
-        // })
+
+            
+
+            let toc = data.project_content.match(/#(.*)/g)
+
+            let tempToc = []
+
+            for (let i =0; i< toc.length; i++) {
+                tempToc.push({name:toc[i]})
+            }
+
+            setToc(tempToc)
+
+        }).catch(error=>{
+            console.log(error)
+        })
     }
 
     useEffect(()=>{
@@ -104,16 +111,16 @@ export default function ProjectDetail() {
 
 
 const examplePost = {
-    project_name: "这里是标题1",
+    project_name: "无人区",
     category:{
         name:"分类",
         id: 7,
     },
-    create_time: "2010年10月9日",
+    publish_time: "1997-12-31T06:20:04Z",
     author: {
         username: "Asa",
     },
-    project_content:"这里是内容  213    ",
+    project_content:"亲~，这里是**无人区**哦~，请赶快远离",
     views: 10,
     tags:[],
 }

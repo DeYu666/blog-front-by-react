@@ -2,13 +2,13 @@ import React, {useEffect, useState} from "react";
 import {Affix, Col, Row} from "antd";
 import {RightOutlined, LeftOutlined} from "@ant-design/icons";
 
-import {useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 
 import TopPostDetail from "../../component-library/top-post-detail/top-post-detail";
 import ContentPostDetail from "../../component-library/content-post-detail/content-post-detail";
 import PostDetailSide from "../post-detail-side/post-detail-side";
-// import {getDetailById} from "../../api/blog";
+import {getDetailById} from "../../api/blog";
 
 import "./post-detail.css";
 
@@ -18,38 +18,32 @@ export default function PostDetail() {
     const [post, setPost] = useState(examplePost);
     const [toc, setToc] = useState([]);
 
-    // let location = useLocation()
+    let param = useParams ()
 
     const readData = () => {
-        // console.log(location)
-        // let postId;
-        // if(location.state === null){
-        //     postId = -1
-        // }else{
-        //     postId = location.state.id
-        // }
-        // console.log(postId)
-        // getDetailById(postId).then(res=>{
-        //     // console.log(res)
-        //     setPost(res.data)
+        let postId = param.postId;
 
-        //     let toc = res.data.content.match(/#(.*)/g)
-        //     // console.log(toc);
+        getDetailById(postId).then(res=>{
+            // console.log(res)
+            setPost(res.data)
 
-        //     let tempToc = []
+            let toc = res.data.content.match(/#(.*)/g)
+            // console.log(toc);
 
-        //     for (let i =0; i< toc.length; i++) {
-        //         tempToc.push({name:toc[i]})
-        //     }
-        //     // console.log(tempToc);
+            let tempToc = []
 
-        //     setToc(tempToc)
+            for (let i =0; i< toc.length; i++) {
+                tempToc.push({name:toc[i]})
+            }
+            // console.log(tempToc);
+
+            setToc(tempToc)
 
 
 
-        // }).catch(error=>{
-        //     console.log(error)
-        // })
+        }).catch(error=>{
+            console.log(error)
+        })
     }
 
     useEffect(()=>{

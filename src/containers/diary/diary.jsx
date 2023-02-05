@@ -3,19 +3,19 @@ import "./index.css"
 import {Col, Row} from "antd";
 import TopPostDetail from "../../component-library/top-post-detail/top-post-detail";
 import ContentDiary from "../../component-library/content-diary/content-diary";
-// import {getDiary} from "../../api/diary";
+import {getDiary} from "../../api/diary";
 
 export default function Diary(prop) {
     const [diaries, setDiaries] = useState(exampleDiaries)
     const [password, setPassword] = useState("")
 
     const readData = () => {
-        // getDiary(password).then(res=>{
+        getDiary(password).then(res=>{
 
-        //     setDiaries(res.data)
-        // }).catch(error=>{
-        //     console.log(error)
-        // })
+            setDiaries(res.data)
+        }).catch(error=>{
+            console.log(error)
+        })
     }
 
     useEffect(()=>{

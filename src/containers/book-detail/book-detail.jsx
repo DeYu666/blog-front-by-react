@@ -2,33 +2,27 @@ import React, {useEffect, useState} from "react";
 import "./index.css"
 import {Col, Row} from "antd";
 import TopPostDetail from "../../component-library/top-post-detail/top-post-detail";
-import {useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import ContentBook from "../../component-library/content-book/content-book";
 
 
-// import {getBookContent} from "../../api/book";
+import {getBookContent} from "../../api/book";
 
 
 export default function BookDetail(prop) {
     const [bookDetail, setBookDetail] = useState(exampleDiaries)
 
-    // let location = useLocation()
+    let param = useParams ()
 
     const readData = () => {
-        // console.log(location)
-        // let bookId;
-        // if(location.state === null){
-        //     bookId = -1
-        // }else{
-        //     bookId = location.state.id
-        // }
-        // console.log(bookId)
-        // getBookContent(bookId).then(res=>{
-        //     // console.log(res)
-        //     setBookDetail(res.data)
-        // }).catch(error=>{
-        //     console.log(error)
-        // })
+        let bookId = param.bookId;
+
+        getBookContent(bookId).then(res=>{
+            // console.log(res)
+            setBookDetail(res.data)
+        }).catch(error=>{
+            console.log(error)
+        })
     }
 
     useEffect(()=>{

@@ -15,8 +15,8 @@ export default function CardProject(prop) {
         abstract: "这里写简介，描述项目的大致内容",
     }
 
-    // const [post, setPost] = useState(prop.post)
-    const [post, setPost] = useState(examplePost)
+    const [post, setPost] = useState(prop.post)
+    // const [post, setPost] = useState(examplePost)
 
 
     const handleClickPost = id => {

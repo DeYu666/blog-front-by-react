@@ -7,21 +7,21 @@ import "./index.css"
 import "../../../component-library/logo-skill/logo-skill"
 import LogoSkill from "../../../component-library/logo-skill/logo-skill";
 import ContentSkill from "../../../component-library/content-skill/content-skill";
-// import {getCvSkill} from "../../../api/cv";
+import {getCvSkill} from "../../../api/cv";
 
 export default function CvSecond() {
 
     const [skillArr, setSkillArr] = useState([])
 
 
-    // useEffect(()=>{
-    //     getCvSkill().then(res=>{
-    //         console.log(res)
-    //         setSkillArr(res.data)
-    //     }).catch(error=>{
-    //         console.log(error)
-    //     })
-    // }, [])
+    useEffect(()=>{
+        getCvSkill().then(res=>{
+            // console.log(res)
+            setSkillArr(res.data)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }, [])
 
     return (
         <div className="cv-second">

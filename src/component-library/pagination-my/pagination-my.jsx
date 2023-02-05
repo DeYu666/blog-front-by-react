@@ -10,7 +10,7 @@ export default class PaginationMy extends Component{
 
     state = {
         current: 1,
-        total : 150,
+        total: 150,
     }
 
     static propTypes = {
@@ -34,12 +34,12 @@ export default class PaginationMy extends Component{
     static getDerivedStateFromProps(nextProps, prevState) {
 
         const {current, total} = nextProps
-        console.log(current, total)
+        // console.log(current, total)
 
         // 由于页面中每一页的数据是12条，而导航栏中默认是10条一页，故 总数 total 需要重新计算一下
 
         return {
-            total: total / 12 * 10 ,
+            total: parseInt(total / 12 * 10 ) ,
             current:current,
         }
     }
@@ -49,26 +49,16 @@ export default class PaginationMy extends Component{
     render() {
 
         const {current, total} = this.state
-    
-        
+  
 
         return (
             <div className="pagenav">
                 <div className="pagenav">
                     <div className="panda_pagi">
-                        {/* <Pagination key={current} total={total}  showSizeChanger current={current} onChange={this.onChange}/> */}
-                        <Pagination defaultCurrent={1} total={100} onChange={this.onChange}  />
+                        <Pagination key={current} total={total}  showSizeChanger current={current} onChange={this.onChange}/>
                     </div>
                 </div>
             </div>
         )
     }
 }
-
-
-
-// export default connect(
-//         state => ({state: state}),
-//         // {getCateId, getPageNum, getPosts}
-// )(PaginationMy)
-

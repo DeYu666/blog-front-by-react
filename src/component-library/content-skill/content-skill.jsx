@@ -37,8 +37,8 @@ export default class ContentSkill extends Component {
     }
 
     render() {
-        // const {skillArr} = this.props
-        const {skillArr} = this.state
+        const {skillArr} = this.props
+        // const {skillArr} = this.state
         return(
             <div className={"skill-content skill-content"}>
                 {skillArr.map((skill, index)=>(

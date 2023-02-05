@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Col, Row} from "antd";
 import CardPost from "../../../component-library/card-post/card-post";
 import PaginationMy from "../../../component-library/pagination-my/pagination-my";
-// import {getPostListByPage} from "../../../api/blog";
+import {getPostListByPage} from "../../../api/blog";
 
 const examplePosts = [
     {
@@ -83,13 +83,13 @@ export default function ShowPostsList(prop) {
     }
 
     useEffect(()=>{
-        // getPostListByPage(cateId, pageNum).then(res=>{
-        //     console.log(res)
-        //     setPosts(res.data.postContent)
-        //     setPageTotal(res.data.pagesNum)
-        // }).catch(error=>{
-        //     console.log(error)
-        // })
+        getPostListByPage(cateId, pageNum).then(res=>{
+            // console.log(res)
+            setPosts(res.data.postContent)
+            setPageTotal(res.data.pagesNum)
+        }).catch(error=>{
+            console.log(error)
+        })
     }, [cateId, pageNum])
 
     return (

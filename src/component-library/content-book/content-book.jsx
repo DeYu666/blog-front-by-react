@@ -1,6 +1,7 @@
 import React from "react";
 import TitleUser from "../title-user/title-user";
 import "./index.css"
+import moment from "moment";
 
 
 export default function ContentBook(prop) {
@@ -8,7 +9,7 @@ export default function ContentBook(prop) {
     return (
         <div className={theme === "dark" ? ("content-diary content-diary-dark"):("content-diary")}>
             <div className={"diary-title"}>
-                <TitleUser title={book.create_time} theme={theme} />
+                <TitleUser title={moment(book.create_time, moment.ISO_8601).format("YYYY年MM月DD日")} theme={theme} />
             </div>
             <div className={"diary-content"}>
                 {book.book_content}

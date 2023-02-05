@@ -7,7 +7,7 @@ import {Col, Row} from "antd";
 
 import "./cv-fourth.css"
 
-// import {getCvProject} from "../../../api/cv";
+import {getCvProject} from "../../../api/cv";
 
 const settings = {
     dots: false,
@@ -21,38 +21,32 @@ const settings = {
 export default function CvFourth()  {
     const [projects, setProjects] = useState([[]])
 
-    // useEffect(()=>{
-    //     getCvProject().then(res=>{
-    //         console.log(res)
+    useEffect(()=>{
+        getCvProject().then(res=>{
+            console.log(res)
 
 
-    //         let i;
+            let i, j;
+            i = 0
+            
+            let tempRes = [];
+            tempRes[i] = [];
 
-    //         let temp = [];
-    //         let tempRes = [];
-
-    //         for(i in res.data){
-    //             if (i !== 0 && i % 3 === 0){
-    //                 tempRes.push(temp)
-    //                 temp.length = 0
-    //                 temp.push(res.data[i])
-    //             }else if(i+1 === res.data.length) {
-    //                 temp.push(res.data[i])
-    //                 tempRes.push(temp)
-    //                 temp.length = 0
-    //             }else {
-    //                 temp.push(res.data[i])
-    //             }
-    //             console.log(temp)
-    //         }
-    //         console.log(tempRes)
-    //         setProjects(tempRes)
+            for(j in res.data){    
+               if (j != 0 && j % 3 == 0) {
+                    i++;
+                    tempRes[i] = [];
+               }
+               tempRes[i][j%3] = res.data[j];
+            }
+            console.log(tempRes)
+            setProjects(tempRes)
 
 
-    //     }).then(error=>{
-    //         console.log(error)
-    //     })
-    // }, [])
+        }).then(error=>{
+            console.log(error)
+        })
+    }, [])
 
     return (
         <div className="cv-fourth">
@@ -61,7 +55,7 @@ export default function CvFourth()  {
                 Latest Project Post
             </div>
             <Carousel>
-                 {/* {projects.map((prs, index)=>(
+                 {projects.map((prs, index)=>(
                     <div className={"project-card"}>
                         <Row key={index}>
                             {prs.map((pro,index2)=>(
@@ -71,9 +65,9 @@ export default function CvFourth()  {
                             ))}
                         </Row>
                     </div>
-                ))}  */}
+                ))} 
 
-                 <div className={"project-card"}>
+                 {/* <div className={"project-card"}>
                     <Row>
                         <Col span={8}>
                             <CardProject />
@@ -98,7 +92,7 @@ export default function CvFourth()  {
                             <CardProject />
                         </Col>
                     </Row>
-                </div> 
+                </div>  */}
             </Carousel>
             </div>
         </div>

@@ -9,7 +9,7 @@ import NavPost from "../../component-library/nav-post/nav-post";
 import ShowPostsList from "../blog-containers/show-posts-list/show-posts-list";
 
 import ShowInfoSide from "../blog-containers/show-info-side/show-info-side";
-// import {getCategoryList} from "../../api/blog";
+import {getCategoryList} from "../../api/blog";
 
 
 
@@ -25,29 +25,29 @@ export default function Blog(prop) {
         setActiveCateId(id)
     }
 
-    // const readPostNavData = () => {
-    //     getCategoryList().then(res=>{
-    //         console.log(res)
-    //         let categories_data = []
-    //         categories_data.push({id: -1, name:"最新撰写"})
-    //         res.data.map(t_cate=>(
-    //             categories_data.push(t_cate)
-    //         ))
+    const readPostNavData = () => {
+        getCategoryList().then(res=>{
+            // console.log(res)
+            let categories_data = []
+            categories_data.push({id: -1, name:"最新撰写"})
+            res.data.map(t_cate=>(
+                categories_data.push(t_cate)
+            ))
 
-    //         console.log(categories_data)
-    //         setPostNav(categories_data)
+            // console.log(categories_data)
+            setPostNav(categories_data)
 
-    //     }).catch(error=>{
-    //         console.log(error)
-    //     })
-    // }
-    // useEffect(()=>{
-    //     readPostNavData()
-    // },[])
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+    useEffect(()=>{
+        readPostNavData()
+    },[])
 
-    // useEffect(()=>{
-    //     setKey(key+1)
-    // }, [postNav])
+    useEffect(()=>{
+        setKey(key+1)
+    }, [postNav])
 
     return(
         <div className={"blog-container"}>
