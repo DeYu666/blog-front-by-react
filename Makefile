@@ -13,19 +13,19 @@ BASE_PRE := /it/
 all: build
 
 $(TARGETS):
- cnpm install @craco/craco@0.0.3
- cnpm run build
+	cnpm install @craco/craco@0.0.3
+	cnpm run build
 
 build: $(TARGETS)
 
 image:
- cp -f Dockerfile.j2 Dockerfile
- docker build -t $(IMAGE_FULLNAME) . --platform linux/amd64
+	cp -f Dockerfile.j2 Dockerfile
+	docker build -t $(IMAGE_FULLNAME) . --platform linux/amd64
 
 image-push:
- docker push $(IMAGE_FULLNAME)
+	docker push $(IMAGE_FULLNAME)
 
 image-fullname:
- @echo $(IMAGE_FULLNAME)
+	@echo $(IMAGE_FULLNAME)
 
 .PHONY: all build build-base image image-fullname image-version clean
