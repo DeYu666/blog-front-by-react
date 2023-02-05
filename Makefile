@@ -13,18 +13,18 @@ BASE_PRE := /it/
 all: build
 
 $(TARGETS):
- npm run build
+	npm run build
 
 build: $(TARGETS)
 
 image: $(TARGETS)
- cp -f Dockerfile.j2 Dockerfile
- docker build -t $(IMAGE_FULLNAME) . --platform linux/amd64
+	cp -f Dockerfile.j2 Dockerfile
+	docker build -t $(IMAGE_FULLNAME) . --platform linux/amd64
 
 image-push:
- docker push $(IMAGE_FULLNAME)
+	docker push $(IMAGE_FULLNAME)
 
 image-fullname:
- @echo $(IMAGE_FULLNAME)
+	@echo $(IMAGE_FULLNAME)
 
 .PHONY: all build build-base image image-fullname image-version clean
