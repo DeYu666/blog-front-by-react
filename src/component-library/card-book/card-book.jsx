@@ -9,20 +9,26 @@ import moment from 'moment';
 
 export default function CardBook(prop){
     const book = prop.book
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
+    const [messageApi, contextHolder] = message.useMessage();
 
 
     function handleClickBook(bookId){
         console.log(bookId)
         if(book.book_status === undefined || book.book_status === "未读"){
-            message.warn(`《${book.book_name}》这本书还没有读。`,10)
+            messageApi.open({
+                type: 'warning',
+                content: `《${book.book_name}》这本书还没有读`,
+                duration: 10
+              });
             return
         }
-        // navigate("/bookDetail", {state:{id:bookId}});
+        navigate("/bookDetail/"+bookId);
     }
 
     return (
         <div className={"card-book"}>
+            {contextHolder}
             <a onClick={handleClickBook.bind(this,book.id)}>
                 <div className={"card-book-image"}>
                     <img src={book.coverUrl ? book.coverUrl : "http://image.asa-zhang.top/cover/default.png"} />

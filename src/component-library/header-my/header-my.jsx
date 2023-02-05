@@ -33,13 +33,18 @@ const navList = [
 
 
 function NavTop(prop) {
+    let navigate = useNavigate();
+
+    const handleClick = e => {
+        navigate(e.key)
+    }
 
     return (
         <Col xs={24} span={20}>
-            <Menu theme={prop.theme} mode="horizontal">
+            <Menu selectedKeys={[prop.path]} onClick={handleClick} mode="horizontal">
                 {
                     navList.map((nav, index) => (
-                        <Menu.Item key={nav.path} selected={true} className="nav-title-my">
+                        <Menu.Item key={nav.path} selected={true}  className="nav-title-my">
                             {nav.text}
                         </Menu.Item>
                     ))

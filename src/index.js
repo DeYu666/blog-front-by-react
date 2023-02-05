@@ -1,15 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from "./containers/app/app";
 import 'antd/dist/reset.css';
-
 
 import {BrowserRouter as Router} from "react-router-dom";
 
 
-ReactDOM.render(
-  <>
-    <App />
-  </>
-, document.getElementById('root')
+
+
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
+  <React.StrictMode>
+        <Router>
+            <App />
+        </Router>
+  </React.StrictMode>
 );

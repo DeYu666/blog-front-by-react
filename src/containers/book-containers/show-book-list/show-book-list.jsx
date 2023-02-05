@@ -51,7 +51,8 @@ const exampleBooks = [
         id: 5,
         book_name:"书籍名称", // book_name
         create_time: "2022-01-07T23:44:01+08:00",  // modified_time: "2022-01-07T23:44:01+08:00"
-        state: 1,   // book_status: "未读"
+        state: 2,   // book_status: "未读"
+        book_status: "已读",
         abstract: "自己的推荐语、吐槽语，等等1。。。",
     },
     {

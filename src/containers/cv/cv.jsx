@@ -48,7 +48,7 @@ function Cv(prop) {
 
                 {pages.map((page, index) => (
 
-                    <div>
+                    <div key={index}>
                         <div style={{height:"100vh", width:"100%"}}>
                             {page}
                         </div>

@@ -5,9 +5,10 @@ import {useNavigate} from "react-router-dom";
 
 
 export default function CardProject(prop) {
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
     const examplePost = {
+        id: 666,
         project_img_src: "",
         publish_time: "2010-02-28",
         project_name: "这里写标题，一直一直一直可以写两行标题",
@@ -19,8 +20,8 @@ export default function CardProject(prop) {
 
 
     const handleClickPost = id => {
-        // console.log(id)
-        // navigate("/projectDetail", {state:{id:id}});
+        console.log(id)
+        navigate("/projectDetail/"+id);
         // this.props.getDetail(id)
         // this.props.history.push(`/detail/${id}`)
     }

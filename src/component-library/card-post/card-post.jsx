@@ -5,15 +5,14 @@ import "./card-post.css"
 import moment from "moment";
 
 
-// export default class CardPost extends Component{
 export default function CardPost(props) {
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
     const handleClickTag = id => {
         // this.props.history.push(`/tag/${id}`)
     }
     const handleClickPost = id => {
-        // navigate("/postDetail", {state:{id:id}});
+        navigate("/postDetail/"+id);
         // this.props.history.push(`/detail/${id}`)
     }
 
