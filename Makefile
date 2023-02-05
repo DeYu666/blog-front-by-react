@@ -13,6 +13,7 @@ BASE_PRE := /it/
 all: build
 
 $(TARGETS):
+	npm install
 	npm run build
 
 build: $(TARGETS)

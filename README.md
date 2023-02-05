@@ -69,3 +69,7 @@ cnpm install react-router-dom
 cnpm install react-slick
 
 ```
+
+
+
+ docker run --name blog-front-by-react -d -p 80:80 -v /tmp/front-log:/var/log/nginx registry.hub.docker.com/deyu666/blog-front-by-react-service:main-cec80d2
