@@ -18,7 +18,7 @@ $(TARGETS):
 
 build: $(TARGETS)
 
-image: $(TARGETS)
+image:
 	cp -f Dockerfile.j2 Dockerfile
 	docker build -t $(IMAGE_FULLNAME) . --platform linux/amd64
 
