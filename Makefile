@@ -19,6 +19,7 @@ $(TARGETS):
 build: $(TARGETS)
 
 image:
+	cp -r ../blog-admin-by-react/build ./build_admin
 	cp -f Dockerfile.j2 Dockerfile
 	docker build -t $(IMAGE_FULLNAME) . --platform linux/amd64
 
