@@ -24,7 +24,8 @@ image:
 	docker build -t $(IMAGE_FULLNAME) . --platform linux/amd64
 
 image-push:
-	docker push $(IMAGE_FULLNAME)
+	docker tag $(IMAGE_FULLNAME) deyu666/$(IMAGE_NAME):latest
+	docker push deyu666/$(IMAGE_NAME):latest
 
 image-fullname:
 	@echo $(IMAGE_FULLNAME)
