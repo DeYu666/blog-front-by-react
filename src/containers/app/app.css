@@ -1,0 +1,30 @@
+
+
+/* 
+
+@media screen and (max-width:768px){
+  .ant-layout-header{
+    padding:0 10px;
+  }
+}
+
+
+.slick-dots {
+  top: 30%;
+  right: 0%;
+  max-width: 3%;
+}
+
+
+
+
+.ant-pagination-item{
+  background-color: #fff0;
+  height: 40px;
+  border: 0;
+}
+
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+  background-color: #fff0;
+  border: 0;
+} */

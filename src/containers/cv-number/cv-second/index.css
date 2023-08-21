@@ -1,0 +1,27 @@
+
+.cv-second{
+  height: 100%;
+  background-color: #f0f2f5
+}
+
+@media screen and (max-width:768px) {
+  .cv-second-left {
+    display: none;
+  }
+
+  .cv-second-right > div{
+    margin-left: 71px;
+  }
+}
+
+
+
+
+.cv-second{
+  background-color: var(--color_bg_2);
+}
+
+
+.cv-second-dark{
+  background-color: var(--color_bg_2_dark);
+}

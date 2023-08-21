@@ -1,0 +1,27 @@
+.ant-menu-light {
+  color: rgba(0, 0, 0, 0.88);
+  background: #ffffff00;
+}
+
+
+
+.ant-switch-checked {
+  background-color: rgb(255 255 255 / 45%);
+}
+
+
+.nav-title-my{
+  font-family: "XingShu";
+  font-size: 15px;
+}
+
+
+
+/* global css */
+.ant-switch.ant-switch-checked, .ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+  background: var(--color_bg_3);
+}
+
+.ant-switch.ant-switch{
+  font-family: "XingShu";
+}

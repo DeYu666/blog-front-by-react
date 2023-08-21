@@ -1,0 +1,35 @@
+.review-row {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  color: black;
+  
+}
+
+.review-row:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+
+}
+
+.company-year {
+  font-size: 9px;
+  font-weight: normal;
+  color: white;
+}
+
+.company-name{
+  font-weight: normal;
+  font-size: 14px;
+}
+
+
+
+
+/* global css  */
+

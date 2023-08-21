@@ -1,0 +1,51 @@
+
+/* defalut css */
+.cv-frist{
+    height: 100%;
+    background-color: #f0f2f5
+}
+
+.introductionContainer{
+    position: absolute;
+    top: 35%;
+    left: 54%;
+}
+
+.introductionLogo{
+    float: left;
+}
+
+
+
+
+
+/* global css */
+.cv-frist{
+    background-color: var(--color_bg_3);
+}
+
+.cv-frist-dark{
+    background-color: var(--color_bg_3_dark);
+}
+
+
+
+
+@media screen and (max-width:768px) {
+    .introductionContainer{
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: -webkit-center;
+    }
+
+    .introductionLogo{
+        float: unset;
+        text-align: -webkit-center;
+        margin-top: 20px;
+    }
+
+    .introductionLogo > img {
+        width: 148px;
+    }
+}

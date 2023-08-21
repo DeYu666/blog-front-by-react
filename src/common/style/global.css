@@ -1,0 +1,60 @@
+:root {
+    --color_bg: #f5f5f5;
+  
+  
+    --tou-ming: #ffffff00;
+  
+  
+    /* color_bg_1 dark;  color_bg_2,3 light */
+    --color_bg_1: #24271E;
+    --color_bg_2: #7c9ad7;
+    --color_bg_2_dark: #4A4F3F;
+    --color_bg_3: #D3A488;
+    --color_bg_3_dark: #B38E6A;
+  
+  
+    --color_fff: #ffffff;
+    --color_f8: #f8f8f8;
+    --color_333: #333333;
+    --color_ea: #eaeaea;
+    --color_c7254e: #c7254e;
+    --color_e8: #e8e8e8;
+  }
+  
+  /* import china font  */
+  @font-face{
+    font-family: 'XingShu';
+    src: url("../font/lixukexingshu.ttf"); 
+  }
+  
+  
+  
+  
+  .ant-layout .ant-layout-header{
+    height: 64px;
+    padding-inline: 50px;
+    color: rgba(0, 0, 0, 0.88);
+    line-height: 64px;
+    background:var(--tou-ming);
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  
+  .ant-layout .ant-layout-footer {
+    padding: 40px 0 20px;
+    border-top: solid 1px rgb(147, 144, 144);
+  }
+  
+  
+  html{
+    height: auto;
+  }
+  
+  html, body,#root, #root > section{
+    min-height: 100%;
+  }
+  
+  
+

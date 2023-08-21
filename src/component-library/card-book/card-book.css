@@ -1,0 +1,96 @@
+.card-book{
+  color: #F0F2F5;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #282C35;
+  padding-bottom: 5px;
+  transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+}
+
+
+.card-book a {
+  margin-right: 0 !important;
+  color: #ffffff;
+  text-transform: none !important;
+}
+
+.card-book .card-book-content {
+  padding: 15px 15px 12px 10px;
+  border-radius: 0 0 2px 2px;
+}
+
+.card-book .card-book-image {
+  transition: 1s;
+  position: relative;
+  background: #928D8D;
+}
+
+.card-book .card-book-image img {
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.card-book:hover {
+  box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+  transform: translate(0,-5px);
+  transition-delay: 0s !important;
+  border-color: transparent;
+}
+
+.card-book:hover img {
+  opacity: 1;
+}
+
+.card-book:hover .card-book-image {
+  background: #fff;
+}
+
+
+.card-book .card-book-image img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-book .card-book-image .card-book-title {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  padding: 0 0 24px 10px;
+}
+
+.card-book .card-book-image .posts-date {
+  color: #cacaca;
+  font-size: 8px;
+  font-family: math;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  max-width: 100%;
+  padding: 0 0 24px 10px;
+}
+
+.card-book .card-book-title {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.card-book .article-book-content .summary-book {
+  padding-bottom: 2px;
+  padding-left: 0;
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.summary-book {
+  color: #F0F2F5;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5em;
+  max-height: 4.5em;
+  text-align: justify;
+  height: 62px;
+  margin-right: -1em;
+  padding-right: 1em;
+}
